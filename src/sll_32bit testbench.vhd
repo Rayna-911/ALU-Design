@@ -1,0 +1,49 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity sll_32bit_tb is
+end sll_32bit_tb;
+
+architecture arch of sll_32bit_tb is
+signal a_tb,b_tb: std_logic_vector (31 downto 0);
+signal result_tb:  std_logic_vector (31 downto 0);
+
+begin
+DUT: entity work.sll_32bit
+port map (a_tb,b_tb,result_tb);
+
+process
+begin
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000000001";
+wait for 10 ns;
+
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000000010";
+wait for 10 ns;
+
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000000011";
+wait for 10 ns;
+
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000000100";
+wait for 10 ns;
+
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000000101";
+wait for 10 ns;
+
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000000110";
+wait for 10 ns;
+
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000000111";
+wait for 10 ns;
+
+a_tb <= "11110000111100001111000011110001";
+b_tb <= "00000000000000000000000000001000";
+wait for 10 ns;
+end process;
+end arch;
